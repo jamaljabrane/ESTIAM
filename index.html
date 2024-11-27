@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humeur du Jour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff6347;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .humeur {
+            background-color: #ffebcd;
+            padding: 20px;
+            font-size: 1.5em;
+            border: 2px solid #ff6347;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quel est ton humeur aujourd'hui ?</h1>
+
+    <div class="humeur" id="humeurText">Cliquez ci-dessous pour découvrir !</div>
+
+    <br>
+    <button onclick="afficherHumeur()">Voir mon humeur</button>
+
+    <script>
+        function afficherHumeur() {
+            const humeurs = [
+                "Aujourd'hui, je suis une boule de joie ! 😊",
+                "Je suis un peu fatigué, mais je vais m'en sortir ! 😴",
+                "Je me sens comme un champion aujourd'hui ! 🏆",
+                "Pas mal de stress, mais j'essaie de rester zen. 🧘",
+                "Aujourd'hui, c'est journée cocooning. ☕",
+                "Je suis prêt à conquérir le monde ! 🌍",
+                "Ça va, mais je rêve de vacances... 🌴"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * humeurs.length);
+            document.getElementById('humeurText').innerText = humeurs[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
